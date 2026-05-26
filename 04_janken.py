@@ -29,7 +29,7 @@ def you_lose():
 
 # ジャンケンした一連の流れの関数
 def janken():
-    you = input('\nグー, チョキ,パーのどれかを入力しとけ それくらいわかるやろW >').strip()
+    you = input('\nグー, チョキ,パーのどれかを入力して >').strip()
     you = (you.replace('ー', '').replace('!', '').replace('！', '').lower().strip())
 
     if you in ['グ', 'ぐ', 'g', 'G', '✊']:
@@ -45,7 +45,7 @@ def janken():
         print('\nありがとう、、、はじめていわれた(泣) ')
         return janken()          
     else:
-        print('\n日本語わかんなかったかW ')
+        print('\n意味分からんW ')
         return janken()
     
     # 接待モードか通常モード選択したときの条件
@@ -100,9 +100,9 @@ while True:
             print(f'おめでとうｗ {win_streak}連勝中 【接待】した価値はあるわ～')               
     else:
         if win_streak >= 3:
-            print(f'よっしゃ{win_streak}連勝でストップやｗ')
+            print(f'{win_streak}連勝でストップやｗ')
         elif win_streak >= 1:
-            print(f'連勝ストップｗ たぶん、今までジャンケンしたやつで一番弱いW') 
+            print(f'連勝ストップ　まだまだ') 
         win_streak  = 0
     if player_won:
         win_count += 1
@@ -114,8 +114,8 @@ while True:
     again = input('yを入力して続ける、nを入力するとやめれるで！').strip().lower()
 
     if again in ['n', 'no', 'NO', 'N', 'ｎ', 'ね', 'やめる', '終了', '終わり', 'おわり','owari']:
-       print('\nやめるん？ 俺がつよすぎたわｗ')
-       print('ごめんて 次は手加減してやるからｗ')
+       print('\nやめるん？')
+       print('次は手加減してあげる')
        time.sleep(1)
        break
     elif any(word in again for word in['バカ', 'アホ', '暇', 'baka', 'aho', '馬鹿']):
@@ -123,7 +123,7 @@ while True:
     elif any(word in again for word in ['天才', '神', 'かっこいい', 'イケメン', '師匠']):
         print('\nありがとう、、、はじめていわれた(泣) ')
     else:
-        print('\nやることないねんなｗ 暇そうでうらやましいわｗ')
+        print('\nやることないねんなｗ')
         time.sleep(1)
 
 new_data = {'勝ち': win_count,'負け': lose_count}  
